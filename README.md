@@ -1,4 +1,4 @@
-"# todoApp"
+# TodoApp
 ## you can save your daily todos here using todo app.
 # Application setup giudline
 
