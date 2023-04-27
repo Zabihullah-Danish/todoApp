@@ -13,3 +13,5 @@
 - run php artisan key:generate.
 - run php artisan migrate to run your migratations.
 - run php artisan server.
+
+![image](https://user-images.githubusercontent.com/65042690/234767411-bfcbbe6c-67e1-47c0-be3f-f81fbe3a5a85.png)
