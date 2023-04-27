@@ -30,9 +30,10 @@ export default function FirstPost(){
             formData.append('title', title)
             formData.append('completed', 0)
             let url = 'api/todos'
+       
             if(todoid != ""){
                 url = 'api/todos/'+todoid;
-                formData.append('_method','put')
+                formData.append('_method','PUT')
             }
             axios.post(url, formData).then((res) => {
                 setTitle('')
@@ -66,6 +67,8 @@ export default function FirstPost(){
         })
     }
 
+    
+
     return (
         <div className="h-screen">
             <div className="max-w-4xl h-screen bg-gray-800 shadow mx-auto">
@@ -88,9 +91,8 @@ export default function FirstPost(){
                 <table className="w-full mt-3 table-fixed">
                     <thead className="bg-sky-900 text-left">
                         <tr>
-                            <th className="pl-3 p-2">ID</th>
+                            <th className="pl-3 p-2 w-1/6">ID</th>
                             <th className="pl-3">Title</th>
-                            <th>Completed</th>
                             <th>Options</th>
                         </tr>
                     </thead>
@@ -100,7 +102,6 @@ export default function FirstPost(){
                             <tr key={todo.id} className="border-b border-gray-400">
                                 <td className="pl-3 py-2">{todo.id}</td>
                                 <td className="pl-3 py-2 ">{ todo.title }</td>
-                                <td><input className="" type="checkbox" checked={todo.completed} /></td>
                                 <td  className="space-x-1 pl-3 py-2">
                                     <button onClick={() => editTodo(todo.id)} className="text-xs bg-blue-600 p-1 px-3 rounded">Edit</button>
                                     <button onClick={() => deleteTodo(todo.id)} className="text-xs bg-red-500 p-1 px-2 rounded">Delete</button>
